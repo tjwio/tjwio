@@ -111,11 +111,10 @@ textarea {
   --spacing-xl: 6rem;
 
   /* Typography */
-  --font-mono: 'Courier New', Courier, monospace;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-               Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-sans: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --font-size-base: 16px;
-  --font-size-sm: 14px;
+  --font-size-sm: 13px;
   --line-height-base: 1.6;
 
   /* Layout */
@@ -159,43 +158,47 @@ body {
 
 /* Typography */
 h1, h2, h3 {
-  font-family: var(--font-mono);
-  font-weight: 400;
+  font-family: var(--font-heading);
+  font-weight: 700;
   line-height: 1.2;
   margin: 0 0 var(--spacing-sm) 0;
 }
 
 h1 {
   font-size: 24px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .name {
   font-size: 24px;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-text);
+  font-family: var(--font-heading);
 }
 
 h2 {
   font-size: var(--font-size-sm);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: var(--spacing-md);
   color: var(--color-text-muted);
+  font-weight: 700;
 }
 
 h3 {
   font-size: var(--font-size-base);
   margin-bottom: var(--spacing-sm);
-  font-weight: 600;
-  font-family: var(--font-sans);
+  font-weight: 700;
+  font-family: var(--font-heading);
 }
 
 p {
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
+  font-weight: 400;
   line-height: var(--line-height-base);
   margin: 0 0 var(--spacing-md) 0;
 }
@@ -253,6 +256,7 @@ ul {
 li {
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
+  font-weight: 400;
   line-height: var(--line-height-base);
 }
 
@@ -317,11 +321,12 @@ li {
 }
 
 .side-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-heading);
   font-size: var(--font-size-sm);
+  font-weight: 700;
   color: var(--color-text-muted);
   writing-mode: vertical-rl;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   margin-bottom: var(--spacing-lg);
   opacity: 0.3;
   transition: opacity 0.3s ease;
