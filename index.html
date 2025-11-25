@@ -24,58 +24,22 @@
 <body>
   <!-- Add your site or application content here -->
   <div class="container">
-    <!-- Left column: Name -->
+    <!-- Left column: Name and contact -->
     <aside class="sidebar">
-      <h1 class="name">Tim<br>Wong</h1>
+      <h1 class="name">Tim Wong</h1>
+      <div class="contact-info">
+        <a href="mailto:tim@tjw.io" class="contact-link">tim@tjw.io</a>
+        <a href="https://www.linkedin.com/in/tjwio" target="_blank" class="contact-link">LinkedIn</a>
+        <a href="https://github.com/tjwio/" target="_blank" class="contact-link">GitHub</a>
+      </div>
     </aside>
 
     <!-- Right column: Content -->
     <main class="content">
-      <!-- About section -->
-      <section class="section" data-label="ABOUT">
-        <h2>About</h2>
-        <p>
-          I'm a software engineer based in Los Angeles with a passion for iOS, AR/VR, and build systems.
-          <ul>
-            <li>
-              I'm currently working at
-              <a href="https://www.meta.com" target="_blank">Meta</a>
-              building the future of smart glasses.
-            </li>
-            <li>
-              Previously I worked at
-              <a href="https://snap.com/en-US" target="_blank">Snap</a>
-              building
-              <a href="https://developers.snap.com/en-US/camera-kit" target="_blank">Camera Kit</a>,
-              an AR SDK.
-            </li>
-            <li>
-              Before that, I worked at
-              <a href="https://mydevices.com" target="_blank">myDevices</a>
-              building IoT solutions.
-            </li>
-            <li>
-              I studied computer science at
-              <a href="https://www.usc.edu" target="_blank">USC</a>
-              &#x270C
-            </li>
-          </ul>
-        </p>
-      </section>
-
-      <!-- Contact section -->
-      <section class="section" data-label="CONTACT">
-        <h2>Connect</h2>
-        <ul class="social-icons">
-          <li><a href="mailto:tim@tjw.io" target="_blank" aria-label="Email"><i class="far fa-paper-plane fa-lg"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/tjwio" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in fa-lg"></i></a></li>
-          <li><a href="https://github.com/tjwio/" target="_blank" aria-label="GitHub"><i class="fab fa-github-alt fa-lg"></i></a></li>
-        </ul>
-      </section>
+      <p>
+        I am a software engineer based in Los Angeles, with a passion for wearables and iOS. I'm currently working at <a href="https://www.meta.com" target="_blank">Meta</a> building the future of wearables. Previously, I worked at <a href="https://snap.com/en-US" target="_blank">Snap</a> building <a href="https://developers.snap.com/en-US/camera-kit" target="_blank">Camera Kit</a>, an AR SDK. I studied computer science at <a href="https://www.usc.edu" target="_blank">USC</a> &#x270C
+      </p>
     </main>
-
-    <!-- Decorative side labels (populated by JS) -->
-    <div class="side-labels" aria-hidden="true"></div>
   </div>
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
