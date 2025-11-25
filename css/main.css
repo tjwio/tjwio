@@ -205,8 +205,12 @@ p {
 }
 
 .body-header {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0;
   line-height: 1.8;
+}
+
+.body-intro {
+  margin-top: 0;
 }
 
 a {
@@ -228,32 +232,23 @@ a:focus {
   gap: var(--spacing-lg);
   max-width: 1400px;
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--container-padding);
+  padding: var(--container-padding);
   min-height: 100vh;
+  align-items: center;
 }
 
 .sidebar {
-  position: sticky;
-  top: var(--spacing-xl);
-  height: fit-content;
-}
-
-.contact-info {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.contact-link {
-  font-size: var(--font-size-sm);
-  font-weight: 400;
-  color: var(--color-text);
-  text-decoration: none;
-  border-bottom: none;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  position: fixed;
+  width: var(--sidebar-width);
 }
 
 .content {
   max-width: var(--content-max-width);
+  margin-left: calc(var(--sidebar-width) + var(--spacing-lg));
 }
 
 .section {
@@ -395,11 +390,18 @@ li {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
     padding: var(--spacing-md) var(--container-padding);
+    align-items: flex-start;
   }
 
   .sidebar {
     position: static;
+    height: auto;
+    width: auto;
     margin-bottom: var(--spacing-md);
+  }
+
+  .content {
+    margin-left: 0;
   }
 
   .name {
