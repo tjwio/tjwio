@@ -2,9 +2,6 @@
 
 /* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -93,71 +90,251 @@ textarea {
 }
 
 /* ==========================================================================
+   CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
+:root {
+  /* Light mode colors */
+  --color-bg: #fafafa;
+  --color-text: #222;
+  --color-text-muted: #666;
+  --color-border: #ddd;
+  --color-link: #222;
+  --color-link-hover: #000;
+
+  /* Spacing */
+  --spacing-unit: 1rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  /* Typography */
+  --font-heading: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-sans: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 13px;
+  --line-height-base: 1.6;
+
+  /* Layout */
+  --sidebar-width: 200px;
+  --content-max-width: 700px;
+  --container-padding: 2rem;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a1a;
+    --color-text: #e0e0e0;
+    --color-text-muted: #999;
+    --color-border: #333;
+    --color-link: #e0e0e0;
+    --color-link-hover: #fff;
+  }
+}
+
+/* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
+/* Base styles */
+html {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
 h1 {
-  color: #222222;
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: 3.7vh;
+  font-size: 24px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+}
+
+h2 {
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+  font-family: var(--font-heading);
 }
 
 p {
-  font-family: 'Arimo', sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
   font-weight: 400;
-  font-size: 18px;
+  line-height: var(--line-height-base);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.body-header {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.8;
 }
 
 a {
+  color: var(--color-link);
   text-decoration: none;
-  color: #222222;
-  border-bottom: 1px solid #222222;
-  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid var(--color-link);
+  transition: all 0.2s ease;
 }
 
-.social-icons a {
-  text-decoration: none;
-  border-bottom: 0px solid;
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
 }
 
-li {
-  font-family: 'Arimo', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--container-padding);
+  min-height: 100vh;
 }
 
-html,
-body {
-  min-height: 100%;
+.sidebar {
+  position: sticky;
+  top: var(--spacing-xl);
+  height: fit-content;
 }
 
-.mainholder {
-  font-size: 18px;
-  padding-left: 3%;
-  /*min-height: 100vh;*/
-  /*box-sizing: border-box;*/
-  max-width: 500px;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.content {
+  max-width: var(--content-max-width);
 }
 
-.social-icons {
+.section {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Project groups */
+.project-group {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Lists */
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  /*padding-top: 15px;*/
-  border: none;
+}
+
+li {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: var(--line-height-base);
+}
+
+.project-list {
+  margin-top: var(--spacing-sm);
+}
+
+.project-list li {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.project-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: var(--spacing-sm);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .social-icons li {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  margin: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+/* Side labels */
+.side-labels {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.side-label {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  writing-mode: vertical-rl;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
 }
 
 /* ==========================================================================
@@ -244,20 +421,48 @@ body {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Responsive Design - Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  :root {
+    --container-padding: 1.5rem;
+    --spacing-xl: 3rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--container-padding);
+  }
+
+  .sidebar {
+    position: static;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .side-labels {
+    display: none !important;
+  }
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+/* Tablet */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --sidebar-width: 150px;
+  }
+}
+
+/* Desktop - show side labels */
+@media only screen and (min-width: 769px) {
+  .side-labels {
+    display: block;
+  }
 }
 
 /* ==========================================================================
@@ -321,4 +526,3 @@ body {
     page-break-after: avoid;
   }
 }
-
