@@ -118,9 +118,10 @@ textarea {
   --line-height-base: 1.7;
 
   /* Layout */
-  --sidebar-width: 200px;
-  --content-max-width: 700px;
-  --container-padding: 2rem;
+  --sidebar-width: 250px;
+  --content-max-width: 600px;
+  --container-padding: 3rem;
+  --sidebar-padding-left: 2rem;
 }
 
 /* Dark mode */
@@ -227,12 +228,7 @@ a:focus {
 
 /* Layout */
 .container {
-  display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  gap: var(--spacing-lg);
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: var(--container-padding);
+  display: flex;
   min-height: 100vh;
   align-items: center;
 }
@@ -243,12 +239,15 @@ a:focus {
   justify-content: flex-start;
   height: 100vh;
   position: fixed;
+  left: 0;
   width: var(--sidebar-width);
+  padding-left: var(--sidebar-padding-left);
 }
 
 .content {
   max-width: var(--content-max-width);
-  margin-left: calc(var(--sidebar-width) + var(--spacing-lg));
+  margin-left: calc(var(--sidebar-width) + var(--container-padding));
+  flex: 1;
 }
 
 .section {
@@ -384,13 +383,13 @@ li {
   :root {
     --container-padding: 1.5rem;
     --spacing-xl: 3rem;
+    --sidebar-padding-left: 1.5rem;
   }
 
   .container {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--container-padding);
+    flex-direction: column;
     align-items: flex-start;
+    padding: var(--spacing-md) var(--container-padding);
   }
 
   .sidebar {
@@ -398,10 +397,12 @@ li {
     height: auto;
     width: auto;
     margin-bottom: var(--spacing-md);
+    padding-left: 0;
   }
 
   .content {
     margin-left: 0;
+    max-width: 100%;
   }
 
   .name {
