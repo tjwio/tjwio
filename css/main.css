@@ -118,10 +118,9 @@ textarea {
   --line-height-base: 1.7;
 
   /* Layout */
-  --sidebar-width: 250px;
+  --sidebar-width: 200px;
   --content-max-width: 600px;
-  --container-padding: 3rem;
-  --sidebar-padding-left: 2rem;
+  --container-padding: 2rem;
 }
 
 /* Dark mode */
@@ -239,9 +238,7 @@ a:focus {
   justify-content: flex-start;
   height: 100vh;
   position: fixed;
-  left: 0;
   width: var(--sidebar-width);
-  padding-left: var(--sidebar-padding-left);
 }
 
 .content {
@@ -383,7 +380,6 @@ li {
   :root {
     --container-padding: 1.5rem;
     --spacing-xl: 3rem;
-    --sidebar-padding-left: 1.5rem;
   }
 
   .container {
@@ -397,7 +393,6 @@ li {
     height: auto;
     width: auto;
     margin-bottom: var(--spacing-md);
-    padding-left: 0;
   }
 
   .content {
