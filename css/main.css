@@ -230,6 +230,9 @@ a:focus {
   display: flex;
   min-height: 100vh;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 .sidebar {
@@ -243,7 +246,7 @@ a:focus {
 
 .content {
   max-width: var(--content-max-width);
-  margin-left: calc(var(--sidebar-width) + var(--container-padding));
+  margin-left: calc(var(--sidebar-width) + var(--spacing-lg));
   flex: 1;
 }
 
