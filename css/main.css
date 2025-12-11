@@ -93,8 +93,14 @@ a:hover {
 
 .container {
   max-width: 600px;
-  padding: 3rem 2rem 3rem 4rem;
+  padding: 3rem 1.5rem;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 3rem 2rem 3rem 4rem;
+  }
 }
 
 .contact {
